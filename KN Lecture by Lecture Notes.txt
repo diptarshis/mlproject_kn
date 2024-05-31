@@ -42,8 +42,8 @@ git remote -v
 
 <Type git global in google https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration >
 
-<git config --global user.name diptarshis>
-<git config --global user.email diptarshis@gmail.com>
+git config --global user.name diptarshis
+git config --global user.email diptarshis@gmail.com
 
 git push -u origin main 
 
@@ -51,7 +51,6 @@ git push -u origin main
 ssh-keygen
 Generate keygen to ..sh folder in C:\Users\ASUS
 Go to the id_rsa file, open as notepad and copy the key and paste it to your Github account in the SSH keys tab within the settings
-
 For any issues - https://www.youtube.com/watch?v=1Km-x_8DSpk
 >
 
@@ -65,6 +64,76 @@ since this gitignore has been added to the github account this needs to be merge
 git pull
 
 the above command will add the gitignore to the local
+
+
+###In your case the environment name is different, so make sure to add it to the environment section of the gitignore file
+.myenv
+
+then 
+
+git status
+git add .
+git commit -m "msg"
+git push -u origin main
+
+
+setup.py creation
+from setuptools import find_packages, setup
+
+
+Write the below
+setup(
+
+    name = 'mlproject_kn',
+
+    version = '0.0.1',
+
+    author = 'diptarshis',
+
+    author_email="diptarshis@gmail.com",
+
+packages=find_packages(),
+install_requires = ['seaborn','numpy','pandas']
+)
+
+
+create the src folder to treat codes in it as package
+build __init__.py
+
+all files in src are treated as packages
+
+Create the requirements.txt file with the packages in line by line format
+
+Now in setup replace the list of packages (install_requires argument) with a function that takes requirements.txt and returns the list
+
+def get_requirements(file_path:str)->List[str]:
+    lst_out = []
+    with open(file_path, "r") as f:
+	    lines = f.readlines()
+	    lst_out=[i.replace('\n','') for i in lines]
+        
+    return lst_out
+
+
+Put -e . in requirements.txt this triggers setup.py (this indicates that setup.py is present and python runs it)
+
+this should be modified in the get_requirements
+
+Modify the above function as below
+
+def get_requirements(file_path:str)->List[str]:
+    lst_out = []
+    with open(file_path, "r") as f:
+	    lines = f.readlines()
+	    lst_out=[i.replace('\n','') for i in lines if '-e .' not in i]
+
+        
+    return lst_out
+
+run the 
+pip install -r requirements.txt
+command
+
 
 
 
