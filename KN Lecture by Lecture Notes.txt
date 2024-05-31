@@ -1,0 +1,71 @@
+KN Lecture by Lecture Notes
+
+1. Setup the GitHub
+a) New environment
+b) Mini Project Structure -- setup.py
+c) requirements.txt & relation to Mini Project Structure
+
+
+Lec01 Notes / Actions
+create folder
+code . from anaconda prompt
+conda create -p venv python==3.8 -y
+
+Not using the conda
+python -m venv myvenv
+myenv\Scripts\activate
+If the above doesnt work change the directory to the above location and then type 'activate'
+
+
+Online source for development of python version.....
+Simple and recent
+Supposed that you have a different version of Python installed in your system. To check use the following command to check:
+
+> py --list
+ -3.10-64 *
+ -3.7-64
+And you want to create a new virtual environment for python 3.7 on a 'test_env' directory. Run the following command:
+
+> py -3.7 -m venv test_env
+Then activate the test_env by running the following command on Windows PowerShell:
+
+> .\test_env\Scripts\Activate.ps1
+
+
+echo "# mlproject_kn" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:diptarshis/mlproject_kn.git
+git remote -v
+
+<Type git global in google https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration >
+
+<git config --global user.name diptarshis>
+<git config --global user.email diptarshis@gmail.com>
+
+git push -u origin main 
+
+<In case you get a permission denied error --
+ssh-keygen
+Generate keygen to ..sh folder in C:\Users\ASUS
+Go to the id_rsa file, open as notepad and copy the key and paste it to your Github account in the SSH keys tab within the settings
+
+For any issues - https://www.youtube.com/watch?v=1Km-x_8DSpk
+>
+
+Create gitignore file in github account
+Go to the main repo and click on Add files
+in the Choose .gitignore template select python
+select on 'Commit changes'
+
+since this gitignore has been added to the github account this needs to be merged with local
+
+git pull
+
+the above command will add the gitignore to the local
+
+
+
+
