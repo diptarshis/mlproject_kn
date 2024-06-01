@@ -6,7 +6,7 @@ def get_requirements(file_path:str)->List[str]:
     lst_out = []
     with open(file_path, "r") as f:
 	    lines = f.readlines()
-	    lst_out=[i.replace('\n','') for i in lines if '-e .' not in i]
+        lst_out=[i.replace('\n','') for i in lines if '-e .' not in i]
 
         
     return lst_out

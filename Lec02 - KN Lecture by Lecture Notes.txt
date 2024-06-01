@@ -1,0 +1,51 @@
+Create components folder inside src
+Inside the components folder create a __init__.py file so that the python codes within the folder can be used as a package
+
+create data_ingestion.py, data_transformation.py, model_trainer.py (from here github action will be made)
+Here data_validation.py, model_evaluation.py can also be added..
+
+
+
+create a pipeline folder in which
+train_pipeline.py
+predict_pipeline.py
+
+
+
+Outside the pipeline
+logging - logger.py
+exception handling - exception.py
+
+Any functionality to be used throughout the codebase
+utils.py --READ FROM MONGODB, CREATE MONGODB CLIENT HERE, SAVE MODEL INTO CLOUD
+
+
+Build the Excception Handling.py module
+--error_message_detail --  takes error message from any error generated from the Exception class and the detail
+###the first argument is the error from Exception class, to get the actual error message from the Exception class
+   ##The second argument is the error_detail from sys module that provides the script name, line number
+
+Make a custom Exception class that inherits from the Exception module
+return the overall error message from the error_message_detail function
+
+
+Build the logger module
+
+Nothing much...just look at the code it is standard
+
+
+python src/logger.py
+
+Add the log message for the error in the error_message_detail function
+
+python src/exception.py
+
+
+
+
+
+
+
+
+
+

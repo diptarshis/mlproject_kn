@@ -13,7 +13,7 @@ conda create -p venv python==3.8 -y
 
 Not using the conda
 python -m venv myvenv
-myenv\Scripts\activate
+myvenv\Scripts\activate
 If the above doesnt work change the directory to the above location and then type 'activate'
 
 
@@ -134,7 +134,11 @@ run the
 pip install -r requirements.txt
 command
 
+there is a new folder created called mlproject_kn (name provided in setup.py)
+this is a copy details mentioned within the setup.py
 
 
-
-
+git status
+git add .
+git commit -m "Second commit : Added setup requirements and linkage to enable package installation"
+git push -u origin main
