@@ -1,0 +1,17 @@
+Create the notebook folder
+In the subfolder create the data subfolder
+
+Make sure to build the jupyter notebook to do the EDA
+
+Add scikit-learn, catboost and xgboost in requirement.txt and run the command 
+pip install -r requirements.txt
+
+In this case, it seems the python script for EDA was written in older python, 
+therefore we had to make quite a few modifications to the EDA code
+
+Run the Notebook for EDA, make sure that there is a few modules on quantitative separation
+
+Run the Model training notebook
+
+Model_trainer.py will have the training part
+Best model and train test split -- utils.py this will get called in the  data ingestion part

@@ -3,8 +3,8 @@ import sys
 import logging
 import os
 from datetime import datetime
-from logger import *
-
+#from logger import *
+from src.logger import logging
 
 
 def error_message_detail(error, error_detail:sys):
@@ -28,10 +28,10 @@ class CustomException(Exception):
 
 
 
-# try:
-#     #logging.info('Hi')
-#     #a=+str(1)
-#     a=1/0
-# except Exception as e:
-#     print(e)
-#     raise CustomException(e,sys)
+try:
+    #logging.info('Hi')
+    #a=+str(1)
+    a=1/0
+except Exception as e:
+    print(e)
+    raise CustomException(e,sys)
