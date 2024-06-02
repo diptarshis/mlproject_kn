@@ -1,13 +1,18 @@
 import os
 import sys
 
-from src.exception import CustomException
-from src.logger import logging
+
 import pandas as pd
 
 from sklearn.model_selection import train_test_split
 
 from dataclasses import dataclass
+
+from src.exception import CustomException
+from src.logger import logging
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
+
 
 ###for saving the training paths in another class, this is only used for defining variable
 @dataclass
@@ -38,12 +43,18 @@ class DataIngestion:
 
             test_set.to_csv(self.ingestion_config.test_data_path,index=False,header=True)
 
-            logging.info("Ingestion of the data iss completed")
+            logging.info("Ingestion of the data is completed")
 
             return(self.ingestion_config.train_data_path,self.ingestion_config.test_data_path)
         except Exception as e:
             raise CustomException(e,sys)
+
 if __name__=='__main__':
     #logging.info(f"{os.getcwd()}")
+
     obj=DataIngestion()
-    obj.initiate_data_ingestion()
+    train_data_path,test_data_path=obj.initiate_data_ingestion()
+    data_transformation=DataTransformation()
+    train_arr,test_arr,preprocessing_filepath=data_transformation.initiate_data_transformation(train_data_path,test_data_path)
+
+

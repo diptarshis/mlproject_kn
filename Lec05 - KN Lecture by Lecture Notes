@@ -1,0 +1,27 @@
+Build the data transformation module
+
+
+Create 2 classes
+a) first the DataTransformationConfig for getting the path for the pickle file which will be referred in the second class
+b) DataTransformation class which will have 2 functions
+ get_data_transformer_object -- which will return the pipeline object for the imputation and scaling for numerical and categorical outputs
+ initiate_data_transformation -- which will call the get_data_transformer_object, implement it and save it in the 
+ path mentioned in DataTransformationConfig
+
+ the save function will be declared in the utils.py file but the 
+
+
+create the save function that takes a location and opens the folder location and saves the pickle file with the dill package
+put the dill in requirements.txt
+ pip install -r requirements.txt
+
+Within the initiate_data_transformation function call the save function declared in the ingestion.py
+call the DataTransformation and DataTransformationConfig class within the data_ingestion.py file
+
+
+
+
+
+
+
+
