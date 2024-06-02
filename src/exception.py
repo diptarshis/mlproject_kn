@@ -28,10 +28,10 @@ class CustomException(Exception):
 
 
 
-try:
-    #logging.info('Hi')
-    #a=+str(1)
-    a=1/0
-except Exception as e:
-    print(e)
-    raise CustomException(e,sys)
+# try:
+#     #logging.info('Hi')
+#     #a=+str(1)
+#     a=1/0
+# except Exception as e:
+#     print(e)
+#     raise CustomException(e,sys)

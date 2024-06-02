@@ -1,0 +1,15 @@
+Data engineering / big data team to provide the overall data
+
+Build data_ingestion.py
+
+dataingestionconfig class build for train and test data saving
+for saving the training paths in another class
+
+Dataingestion class is built for taking the attributes from the datainngestionconfig and reading the actual file. 
+This can be done in the utils.py in cases of databases as well
+
+In the initiate_data_ingestion function within the dataingestion class,
+Train and Test data to be saved in an artifacts folder which will be taken from the dataingestionconfig class
+in this function, the read data path can be substituted with Mongodb data extraction etc. 
+
+Add the artifacts folder to the gitignore
