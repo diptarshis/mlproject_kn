@@ -13,6 +13,9 @@ from src.logger import logging
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
+from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
+
 
 ###for saving the training paths in another class, this is only used for defining variable
 @dataclass
@@ -56,5 +59,8 @@ if __name__=='__main__':
     train_data_path,test_data_path=obj.initiate_data_ingestion()
     data_transformation=DataTransformation()
     train_arr,test_arr,preprocessing_filepath=data_transformation.initiate_data_transformation(train_data_path,test_data_path)
-
+    model_trainer = ModelTrainer()
+    #def training_array(self,train_array,test_array,preprocessed_data_path)
+    r2=model_trainer.training_array(train_arr,test_arr,preprocessing_filepath)
+    print(r2)
 

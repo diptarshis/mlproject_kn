@@ -1,0 +1,22 @@
+Development of the model_trainer.py is needed 
+
+In the similar fashion of developing the data_transformation and data_ingestion
+a dataclass is used
+class ModelTrainerConfig:
+
+here the path for the pickle object to be saved is provided
+    
+
+This class is instantiated in the model_trainer.py
+Model_trainer has the class ModelTrainer which comprises of training_array function which in turn 
+uses the train and test data split to instantiate non-hyperparatemer trained multiple models 
+(which are declared in the form of dictionary) and 
+then evaluate those on the r2 score of the test data 
+
+For evaluating, the utils file has been developed that comprises of the evaluate function. 
+This function returns a dictionary of models and their test data r2_scores. 
+
+In the model_trainer.py within the training_array function,
+This is then used to select the model in the non-hyperparameter trained with the 
+best scores and return the r2_score in printed format
+
