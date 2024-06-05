@@ -1,0 +1,3 @@
+Built the hyperparameter tuning part within the model trainer.py module in the ModelTrainer class, 
+we have declared the dictionary consisting of hyper parameter tuning
+
